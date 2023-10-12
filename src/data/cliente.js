@@ -1,6 +1,11 @@
 export async function obtenerClientes() {
-
     const request = await fetch(import.meta.env.VITE_API_URL);
+    const json = await request.json();
+    return json;
+}
+
+export async function obtenerCliente(id) {
+    const request = await fetch(`${import.meta.env.VITE_API_URL}/${id}`);
     const json = await request.json();
     return json;
 }

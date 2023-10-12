@@ -1,8 +1,10 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Cliente = ({ cliente }) => {
 
+    const navigate = useNavigate();
     const { nombre, empresa, email, telefono, id } = cliente
+
     return (
         <tr className='border-b'>
             <td className="celda space-y-2">
@@ -24,6 +26,7 @@ const Cliente = ({ cliente }) => {
 
                     <button
                         className='button edit-button'
+                        onClick={() => navigate(`/clientes/${id}/editar`)}
                     >Editar</button>
                     <button
                         className='button delete-button'
