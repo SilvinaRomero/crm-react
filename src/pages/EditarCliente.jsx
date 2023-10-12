@@ -1,5 +1,5 @@
-import { useLoaderData, Form, useNavigate } from "react-router-dom";
-import { obtenerCliente } from "../data/cliente"
+import { useLoaderData, useActionData, Form, useNavigate,redirect } from "react-router-dom";
+import { obtenerCliente,editarCliente } from "../data/cliente"
 import Formulario from "../components/Formulario";
 import Error from "../components/Error";
 
@@ -16,9 +16,36 @@ export async function loader({ params }) {
     return cliente
 }
 
+export async function action({request,params}){
+    const formData = await request.formData();
+    const datos = Object.fromEntries(formData);
+    const email = formData.get('email');
+
+    const errores = [];
+
+    // Validación
+    if (Object.values(datos).includes('')) {
+        errores.push('Todos los campos son obligatorios');
+    }
+
+    let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+    if (!regex.test(email)) {
+        errores.push('El email no es valido');
+    }
+
+    // Retornar datos si hay errores
+    if (Object.keys(errores).length) {
+        return errores;
+    }
+    // si pasamos la validacion actualizamos al nuevo cliente
+    await editarCliente(params.clienteId,datos); // no queremos que se e ejute el resto de codigo hasta que finalize esta funcion
+    return redirect('/');
+}
+
 function EditarCliente() {
     const navigate = useNavigate();
     const cliente = useLoaderData();
+    const errores = useActionData();
 
     return (
         <>
@@ -34,7 +61,7 @@ function EditarCliente() {
                 </button>
             </div>
             <div className="formulario mt-5">
-                {/* {errores?.length && errores.map((error, i) => <Error key={i}><p>{error}</p></Error>)} */}
+                {errores?.length && errores.map((error, i) => <Error key={i}><p>{error}</p></Error>)}
                 <Form
                     method="POST"
                     noValidate
@@ -45,7 +72,7 @@ function EditarCliente() {
                     <input
                         type="submit"
                         className="button info-button mt-5 w-full"
-                        value="Registrar cliente"
+                        value="Editar cliente"
                     />
                 </Form>
             </div>
