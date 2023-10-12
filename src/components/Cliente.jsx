@@ -23,33 +23,6 @@ const Cliente = ({ cliente }) => {
     const navigate = useNavigate();
     const { nombre, empresa, email, telefono, id } = cliente
 
-    // const confirmacion =  () => {
-    //     let des = false
-    //     Swal.fire({
-    //         title: 'Are you sure?',
-    //         text: "You won't be able to revert this!",
-    //         icon: 'warning',
-    //         showCancelButton: true,
-    //         confirmButtonColor: '#3085d6',
-    //         cancelButtonColor: '#d33',
-    //         confirmButtonText: 'Yes, delete it!'
-    //     }).then((result) => {
-    //         if (result.isConfirmed) {
-    //             Swal.fire(
-    //                 'Deleted!',
-    //                 'Your file has been deleted.',
-    //                 'success'
-    //             )
-    //             des = true;
-    //             console.log('des es '+des)
-    //             console.log('pase por la confirmacion')
-    //             return des
-    //         }
-    //     })
-    //     return des
-
-    // }
-
     return (
         <tr className='border-b'>
             <td className="celda space-y-2">
