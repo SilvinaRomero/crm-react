@@ -13,6 +13,9 @@ function Layout() {
                     <nav className="mt-10">
                         <Link className={`${location.pathname === '/' ? 'text-white':'text-blue-300'} enlace`} to="/">Clientes</Link>
                         <Link className={`${location.pathname === '/clientes/nuevo' ? 'text-white':'text-blue-300'} enlace`} to="/clientes/nuevo">Nuevo Cliente</Link>
+                       {new RegExp('editar').test(location.pathname) ? (
+                        <p className='text-white enlace'>Editar Cliente</p>
+                       ):null}
                     </nav>
                 </aside>
                 <main className="md:w-3/4 p-10 md:h-screen overflow-scroll">
