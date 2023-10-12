@@ -44,7 +44,7 @@ function NuevoCliente() {
             <div className='flex justify-end'>
                 <button
                     className='button info-button'
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate('/')}
                 >
                     Volver
                 </button>
