@@ -9,7 +9,7 @@ export function loader() {
 
 function Index() {
     const datosClientes = useLoaderData();
-    console.log(datosClientes)
+    // console.log(datosClientes)
 
     return (
         <>

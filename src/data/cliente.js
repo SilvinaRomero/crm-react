@@ -20,7 +20,7 @@ export async function agregarCliente(datos){
             }
         });
        const json = await respuesta.json();
-       console.log(json);
+    //    console.log(json);
     } catch (error) {
         console.log(error);
     }
@@ -34,8 +34,20 @@ export async function editarCliente(id,datos){
                 'Content-Type': 'application/json'
             }
         });
-       const json = await respuesta.json();
-       console.log(json);
+       await respuesta.json();
+    
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function eliminarCliente(id){
+    try {
+        const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/${id}`,{
+            method: 'DELETE'
+        });
+       await respuesta.json();
+    
     } catch (error) {
         console.log(error);
     }
