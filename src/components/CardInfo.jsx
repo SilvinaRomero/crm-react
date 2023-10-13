@@ -6,32 +6,32 @@ const CardInfo = ({ cliente }) => {
     return (
         <div className="formulario mt-5">
             <div>
-                <div class="px-4 sm:px-0">
-                    <h3 class="text-base font-semibold leading-7 text-gray-900">Información del cliente</h3>
-                    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Datos personales.</p>
+                <div className="px-4 sm:px-0">
+                    <h3 className="text-base font-semibold leading-7 text-gray-900">Información del cliente</h3>
+                    <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Datos personales.</p>
                 </div>
-                <div class="mt-6 border-t border-gray-100">
-                    <dl class="divide-y divide-gray-100">
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Nombre Completo</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{nombre}</dd>
+                <div className="mt-6 border-t border-gray-100">
+                    <dl className="divide-y divide-gray-100">
+                        <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt className="text-sm font-medium leading-6 text-gray-900">Nombre Completo</dt>
+                            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{nombre}</dd>
                         </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Empresa</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{empresa}</dd>
+                        <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt className="text-sm font-medium leading-6 text-gray-900">Empresa</dt>
+                            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{empresa}</dd>
                         </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Email</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{email}</dd>
+                        <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt className="text-sm font-medium leading-6 text-gray-900">Email</dt>
+                            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{email}</dd>
                         </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Teléfono</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{telefono}</dd>
+                        <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt className="text-sm font-medium leading-6 text-gray-900">Teléfono</dt>
+                            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{telefono}</dd>
                         </div>
                         {notas && (
-                            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                <dt class="text-sm font-medium leading-6 text-gray-900">Notas</dt>
-                                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{notas}</dd>
+                            <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                <dt className="text-sm font-medium leading-6 text-gray-900">Notas</dt>
+                                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{notas}</dd>
                             </div>
                         )}
 
