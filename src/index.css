@@ -30,6 +30,10 @@
     @apply bg-blue-800 hover:bg-blue-400
 }
 
+.see-button{
+    @apply bg-lime-800 hover:bg-lime-400
+}
+
 .resaltado{
     @apply uppercase text-gray-800 font-bold
 }

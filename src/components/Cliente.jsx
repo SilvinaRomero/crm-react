@@ -47,6 +47,11 @@ const Cliente = ({ cliente }) => {
                         className='button edit-button'
                         onClick={() => navigate(`/clientes/${id}/editar`)}
                     >Editar</button>
+                     <button
+                        type='button'
+                        className='button see-button'
+                        onClick={() => navigate(`/clientes/${id}/ver`)}
+                    >Ver</button>
                     <Form
                         method='POST'
                         action={`/clientes/${id}/eliminar`}

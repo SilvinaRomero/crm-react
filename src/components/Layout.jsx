@@ -16,6 +16,9 @@ function Layout() {
                        {new RegExp('editar').test(location.pathname) ? (
                         <p className='text-white enlace'>Editar Cliente</p>
                        ):null}
+                       {new RegExp('ver').test(location.pathname) ? (
+                        <p className='text-white enlace'>Ver Cliente</p>
+                       ):null}
                     </nav>
                 </aside>
                 <main className="md:w-3/4 p-10 md:h-screen overflow-scroll">
