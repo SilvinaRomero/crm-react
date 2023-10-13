@@ -20,13 +20,30 @@ export async function action({request,params}){
     const formData = await request.formData();
     const datos = Object.fromEntries(formData);
     const email = formData.get('email');
+    const nombre = formData.get('nombre');
+    const telefono = formData.get('telefono');
+    const empresa = formData.get('empresa');
+    const notas = formData.get('notas');
 
     const errores = [];
 
     // Validación
-    if (Object.values(datos).includes('')) {
-        errores.push('Todos los campos son obligatorios');
+    // if (Object.values(datos).includes('')) {
+    //     errores.push('Todos los campos son obligatorios');
+    // }
+    if (nombre === '') {
+        errores.push('El nombre es obligatorio');
     }
+    if (telefono === '') {
+        errores.push('El teléfono es obligatorio');
+    }
+    if (empresa === '') {
+        errores.push('La empresa es obligatoria');
+    }
+    if (email === '') {
+        errores.push('El email es obligatorio');
+    }
+
 
     let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
     if (!regex.test(email)) {
